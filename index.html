@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy | Family Content Creator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-[#FF3EB5]">Daisy</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-700 hover:text-[#FF3EB5] transition">Home</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-[#FF3EB5] transition">About</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-[#FF3EB5] transition">Services</a>
+                <a href="#portfolio" class="nav-link text-gray-700 hover:text-[#FF3EB5] transition">Portfolio</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-[#FF3EB5] transition">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars text-2xl text-[#FF3EB5]"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white w-full px-6 py-3" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="nav-link text-gray-700 hover:text-[#FF3EB5] transition">Home</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-[#FF3EB5] transition">About</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-[#FF3EB5] transition">Services</a>
+                <a href="#portfolio" class="nav-link text-gray-700 hover:text-[#FF3EB5] transition">Portfolio</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-[#FF3EB5] transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-32 pb-20 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Daisy!</h1>
+                <h2 class="text-2xl md:text-3xl text-gray-700 mb-8">Bringing Family Life to Life – Bright, Real & Unforgettable.</h2>
+                <a href="#portfolio" class="btn-primary inline-block bg-[#FFD23F] text-black font-bold py-3 px-8 rounded-full hover:bg-[#1DD3B0]">VIEW PORTFOLIO</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#FF3EB5] shadow-xl bg-gray-100">
+                    <!-- Insert your image here -->
+                    <img src="profile.jpg" alt="Daisy Profile" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+    <div class="container mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+            <div class="w-20 h-1 bg-[#1DD3B0] mx-auto"></div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                <div class="relative w-64 h-64 rounded-lg overflow-hidden shadow-xl bg-gray-100">
+                    <!-- Insert your image here -->
+                    <img src="about-me.jpg" alt="About Daisy" class="w-full h-full object-cover" />
+                </div>
+            </div>
+            <div class="md:w-2/3 md:pl-12">
+                <p class="text-lg mb-6">
+                    Hi, I’m Daisy! I live in Gibraltar with my 3-year-old daughter Harlequin, my husband, and our two dogs. I started my Instagram page (@daisy_in_gibraltar) to document my pregnancy, and it’s grown into a vibrant space where I share day-to-day life, from toddler adventures and parenting moments to travel, food, fashion, and everything in between.
+                </p>
+                <p class="text-lg mb-6">
+                    My content is all about real family moments, adventures big and small, and style that works for busy mums. I work with brands that feel like a natural fit for how we live and what we love, creating high-quality UGC that’s relatable, authentic, and built to connect with modern audiences.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Services Section with Modal Trigger -->
+    <section id="services" class="py-20 px-6" style="background:#19E3E3;">
+    <div class="container mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color:#222222;">SERVICES</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- Service 1 -->
+            <div class="service-card p-8 rounded-xl shadow-md flex flex-col items-center transition-transform hover:scale-105 cursor-pointer" style="background:#FF23A1; color:#fff;" onclick="openModal('ugc')">
+                <i class="fas fa-video text-4xl mb-4" style="color:#FFE03A;"></i>
+                <h3 class="text-lg font-bold mb-2 text-center">UGC Video Creation</h3>
+                <p class="text-center mb-4">Short-form, platform-optimised vertical videos</p>
+                <button class="bg-[#FFE03A] text-[#FF23A1] font-bold py-2 px-6 rounded-full hover:bg-[#19E3E3] hover:text-white transition">Explore</button>
+            </div>
+            <!-- Service 2 -->
+            <div class="service-card p-8 rounded-xl shadow-md flex flex-col items-center transition-transform hover:scale-105 cursor-pointer" style="background:#FFE03A; color:#222;" onclick="openModal('photo')">
+                <i class="fas fa-camera text-4xl mb-4" style="color:#19E3E3;"></i>
+                <h3 class="text-lg font-bold mb-2 text-center">Lifestyle & Family Photography</h3>
+                <p class="text-center mb-4">High-quality, brand-aligned imagery</p>
+                <button class="bg-[#19E3E3] text-[#222] font-bold py-2 px-6 rounded-full hover:bg-[#FF23A1] hover:text-white transition">Explore</button>
+            </div>
+            <!-- Service 3 -->
+            <div class="service-card p-8 rounded-xl shadow-md flex flex-col items-center transition-transform hover:scale-105 cursor-pointer" style="background:#19E3E3; color:#222;" onclick="openModal('review')">
+                <i class="fas fa-star text-4xl mb-4" style="color:#FF23A1;"></i>
+                <h3 class="text-lg font-bold mb-2 text-center">Product Reviews & Tutorials</h3>
+                <p class="text-center mb-4">Honest and engaging storytelling</p>
+                <button class="bg-[#FF23A1] text-white font-bold py-2 px-6 rounded-full hover:bg-[#FFE03A] hover:text-[#FF23A1] transition">Explore</button>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row md:justify-center gap-8">
+            <div class="service-card p-8 rounded-xl shadow-md flex flex-col items-center mx-auto md:mx-0 transition-transform hover:scale-105 cursor-pointer" style="background:#FF23A1; color:#fff; max-width:350px; min-width:260px;" onclick="openModal('travel')">
+                <i class="fas fa-plane text-4xl mb-4" style="color:#FFE03A;"></i>
+                <h3 class="text-lg font-bold mb-2 text-center">Travel & Destination Features</h3>
+                <p class="text-center mb-4">Showcasing hotels, experiences, and activities with a family-friendly lens</p>
+                <button class="bg-[#FFE03A] text-[#FF23A1] font-bold py-2 px-6 rounded-full hover:bg-[#19E3E3] hover:text-white transition">Explore</button>
+            </div>
+            <div class="service-card p-8 rounded-xl shadow-md flex flex-col items-center mx-auto md:mx-0 transition-transform hover:scale-105 cursor-pointer" style="background:#FFE03A; color:#222; max-width:350px; min-width:260px;" onclick="openModal('fashion')">
+                <i class="fas fa-tshirt text-4xl mb-4" style="color:#19E3E3;"></i>
+                <h3 class="text-lg font-bold mb-2 text-center">Fashion & Styling Content</h3>
+                <p class="text-center mb-4">Looks and styling ideas that inspire</p>
+                <button class="bg-[#19E3E3] text-[#222] font-bold py-2 px-6 rounded-full hover:bg-[#FF23A1] hover:text-white transition">Explore</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="serviceModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 relative flex flex-col items-center">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-[#FF23A1] text-2xl hover:text-[#19E3E3] transition">&times;</button>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold mb-4 tracking-tight text-[#222]">My Portfolio</h2>
+                <div class="w-24 h-1 bg-[#19E3E3] mx-auto rounded"></div>
+                <p class="mt-4 text-lg text-gray-500">A showcase of creative UGC videos.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Portfolio Card 1: TikTok-style video -->
+                <div class="rounded-2xl shadow-xl bg-gradient-to-br from-[#FF23A1] to-[#FFE03A] flex flex-col items-center p-6 hover:scale-105 transition duration-300">
+                    <div class="flex items-center justify-center bg-[#FFE03A] rounded-xl mb-4 overflow-hidden" style="height:320px; width:180px;">
+                        <video controls class="w-full h-full object-cover rounded-xl bg-black">
+                            <source src="your-tiktok-video1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 text-center drop-shadow">Mineral Mousse Dreamscreen</h3>
+                    <p class="text-white text-center text-sm">Organic UGC Example (Skincare)</p>
+                </div>
+                <!-- Portfolio Card 2: TikTok-style video -->
+                <div class="rounded-2xl shadow-xl bg-gradient-to-br from-[#FFE03A] to-[#19E3E3] flex flex-col items-center p-6 hover:scale-105 transition duration-300">
+                    <div class="flex items-center justify-center bg-[#19E3E3] rounded-xl mb-4 overflow-hidden" style="height:320px; width:180px;">
+                        <video controls class="w-full h-full object-cover rounded-xl bg-black">
+                            <source src="your-tiktok-video2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#222] mb-2 text-center drop-shadow">pdrn pink serum</h3>
+                    <p class="text-[#222] text-center text-sm">Organic ugc video example with this amazing pdrn pink serum.</p>
+                </div>
+                <!-- Portfolio Card 3: TikTok-style video -->
+                <div class="rounded-2xl shadow-xl bg-gradient-to-br from-[#19E3E3] to-[#FF23A1] flex flex-col items-center p-6 hover:scale-105 transition duration-300">
+                    <div class="flex items-center justify-center bg-[#FF23A1] rounded-xl mb-4 overflow-hidden" style="height:320px; width:180px;">
+                        <video controls class="w-full h-full object-cover rounded-xl bg-black">
+                            <source src="your-tiktok-video3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 text-center drop-shadow">Wellness niche</h3>
+                    <p class="text-white text-center text-sm">It’s also combined with vitamin E, so it’s even more rich and complete</p>
+                </div>
+                <!-- Portfolio Card 4: TikTok-style video -->
+                <div class="rounded-2xl shadow-xl bg-gradient-to-br from-[#FF23A1] to-[#FFE03A] flex flex-col items-center p-6 hover:scale-105 transition duration-300">
+                    <div class="flex items-center justify-center bg-[#FFE03A] rounded-xl mb-4 overflow-hidden" style="height:320px; width:180px;">
+                        <video controls class="w-full h-full object-cover rounded-xl bg-black">
+                            <source src="your-tiktok-video4.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 text-center drop-shadow">Lip peptide treatment</h3>
+                    <p class="text-white text-center text-sm">Romantising lip balm.</p>
+                </div>
+                <!-- Portfolio Card 5: TikTok-style video -->
+                <div class="rounded-2xl shadow-xl bg-gradient-to-br from-[#FFE03A] to-[#19E3E3] flex flex-col items-center p-6 hover:scale-105 transition duration-300">
+                    <div class="flex items-center justify-center bg-[#19E3E3] rounded-xl mb-4 overflow-hidden" style="height:320px; width:180px;">
+                        <video controls class="w-full h-full object-cover rounded-xl bg-black">
+                            <source src="your-tiktok-video5.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#222] mb-2 text-center drop-shadow">Chu Chu Beauty</h3>
+                    <p class="text-[#222] text-center text-sm">Heart blush duo.</p>
+                </div>
+                <!-- Portfolio Card 6: TikTok-style video -->
+                <div class="rounded-2xl shadow-xl bg-gradient-to-br from-[#19E3E3] to-[#FF23A1] flex flex-col items-center p-6 hover:scale-105 transition duration-300">
+                    <div class="flex items-center justify-center bg-[#FF23A1] rounded-xl mb-4 overflow-hidden" style="height:320px; width:180px;">
+                        <video controls class="w-full h-full object-cover rounded-xl bg-black">
+                            <source src="your-tiktok-video6.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 text-center drop-shadow">Coconut oil</h3>
+                    <p class="text-white text-center text-sm">Coconut oil, through a macro lens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-[#FFF9F5]">
+    <div class="container mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
+            <div class="w-20 h-1 bg-[#FF23A1] mx-auto"></div>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-start md:justify-center gap-12">
+            <!-- Contact Info & Socials -->
+            <div class="md:w-1/2 mb-10 md:mb-0 flex flex-col justify-center items-center">
+                <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
+                <p class="mb-6 text-lg text-center max-w-md">
+                    Interested in working together or have questions about my services?<br>
+                    Fill out the form or reach out via social media!
+                </p>
+                <div class="mb-8">
+                    <h4 class="text-xl font-bold mb-3 text-center">Follow Me</h4>
+                    <div class="flex justify-center space-x-6 mb-4">
+                        <a href="https://instagram.com/daisy_in_gibraltar" target="_blank" class="w-14 h-14 flex items-center justify-center rounded-full bg-[#FF23A1] hover:bg-[#FFE03A] transition duration-200 shadow-lg" title="Instagram">
+                            <i class="fab fa-instagram text-2xl text-white"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@daisy_in_gibraltar" target="_blank" class="w-14 h-14 flex items-center justify-center rounded-full bg-[#19E3E3] hover:bg-[#FF23A1] transition duration-200 shadow-lg" title="TikTok">
+                            <i class="fab fa-tiktok text-2xl text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <h4 class="text-xl font-bold mb-2">Email Me Directly</h4>
+                    <a href="mailto:daisy.in.gib@gmail.com" class="inline-flex items-center gap-2 text-[#1DD3B0] hover:text-[#FF23A1] transition font-semibold text-lg">
+                        <i class="fas fa-envelope"></i>
+                        daisy.in.gib@gmail.com
+                    </a>
+                </div>
+            </div>
+            <!-- Contact Form -->
+            <div class="md:w-1/2 flex justify-center">
+                <form class="bg-white p-4 rounded-xl shadow-md max-w-md w-full">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-medium mb-1 text-base">Your Name</label>
+                        <input type="text" id="name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF23A1] text-sm">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-medium mb-1 text-base">Email Address</label>
+                        <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF23A1] text-sm">
+                    </div>
+                    <div class="mb-4">
+                        <label for="subject" class="block text-gray-700 font-medium mb-1 text-base">Subject</label>
+                        <input type="text" id="subject" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF23A1] text-sm">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 font-medium mb-1 text-base">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF23A1] text-sm"></textarea>
+                    </div>
+                    <button type="submit" class="btn-secondary w-full bg-[#FF23A1] text-white font-bold py-2 px-6 rounded-full hover:bg-[#19E3E3] transition text-base">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2E2E2E] text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <a href="#" class="text-2xl font-bold text-[#FF23A1]">Daisy</a>
+                    <p class="mt-2 text-gray-400">Bringing Family Life to Life</p>
+                </div>
+                <div class="flex flex-wrap justify-center md:justify-end gap-6">
+                    <a href="#home" class="text-gray-400 hover:text-[#FF23A1] transition font-medium">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-[#FF23A1] transition font-medium">About</a>
+                    <a href="#services" class="text-gray-400 hover:text-[#FF23A1] transition font-medium">Services</a>
+                    <a href="#portfolio" class="text-gray-400 hover:text-[#FF23A1] transition font-medium">Portfolio</a>
+                    <a href="#contact" class="text-gray-400 hover:text-[#FF23A1] transition font-medium">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between text-center gap-4">
+                <p class="text-gray-400">&copy; 2023 Daisy. All rights reserved.</p>
+                <a href="https://thefreewebsitewizards.com/?fbclid=PAZXh0bgNhZW0CMTEAAad0Jm-GNlXnPPJ1LVG1DBVBoUGdRHC5m3FFwUqGHjUfujAnDPDhsINN8mAv1A_aem_owWh2qpkEErFPYCqV9cPEg" target="_blank" rel="noopener" class="text-[#19E3E3] hover:text-[#FF23A1] font-semibold transition">
+                    Built by The Free Website Wizards
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
