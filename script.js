@@ -105,8 +105,47 @@ function openModal(service) {
 
 function closeModal() {
     const modal = document.getElementById('serviceModal');
+    
+    // Pause and mute any playing videos in the modal
+    const videos = modal.querySelectorAll('video');
+    videos.forEach(video => {
+        video.pause();
+        video.muted = true;
+        video.currentTime = 0;
+    });
+    
     modal.classList.add('hidden');
     modal.classList.remove('flex');
+}
+
+// Portfolio video zoom functionality
+function openVideoModal(videoSrc, title, description) {
+    const modal = document.getElementById('serviceModal');
+    const content = document.getElementById('modalContent');
+    
+    const html = `
+        <div class="text-center">
+            <h3 class="text-xl font-bold mb-4 text-center">${title}</h3>
+            <video controls autoplay class="w-full max-w-[300px] h-[500px] object-cover rounded-xl bg-black mx-auto mb-4">
+                <source src="${videoSrc}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="text-gray-600 text-center">${description}</p>
+        </div>
+    `;
+    
+    content.innerHTML = html;
+    
+    // Ensure the video is unmuted when modal opens
+    setTimeout(() => {
+        const video = modal.querySelector('video');
+        if (video) {
+            video.muted = false;
+        }
+    }, 100);
+    
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
 }
 
 // Make sure this runs after DOM is loaded
@@ -119,5 +158,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Also allow modal to close with ESC key
     document.addEventListener('keydown', function(e) {
         if (e.key === "Escape") closeModal();
+    });
+    
+    // Add click event listeners to portfolio cards
+    const portfolioCards = document.querySelectorAll('#portfolio .rounded-2xl');
+    portfolioCards.forEach((card, index) => {
+        card.style.cursor = 'pointer';
+        
+        function openCardModal() {
+            const video = card.querySelector('video source');
+            const title = card.querySelector('h3').textContent;
+            const description = card.querySelector('p').textContent;
+            const videoSrc = video.getAttribute('src');
+            
+            openVideoModal(videoSrc, title, description);
+        }
+        
+        card.addEventListener('click', function(e) {
+            openCardModal();
+        });
+        
+        // Make video clicks also trigger the modal
+        const videoElement = card.querySelector('video');
+        if (videoElement) {
+            videoElement.addEventListener('click', function(e) {
+                e.preventDefault();
+                openCardModal();
+            });
+        }
     });
 });
