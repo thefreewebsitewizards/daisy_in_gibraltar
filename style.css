@@ -1,0 +1,82 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFE03A;
+    color: #222222;
+    scroll-behavior: smooth;
+}
+
+.hero-bg {
+    background: #FF23A1;
+    color: #FFFFFF;
+}
+
+.service-card {
+    background-color: #19E3E3;
+    color: #222222;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.portfolio-item {
+    background-color: #FFE03A;
+    color: #222222;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay {
+    background: rgba(255, 35, 161, 0.8);
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    color: #222222;
+}
+
+.nav-link:hover {
+    color: #FF23A1;
+}
+
+.btn-primary {
+    background-color: #FFE03A;
+    color: #222222;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #19E3E3;
+    color: #222222;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 35, 161, 0.3);
+}
+
+.btn-secondary {
+    background-color: #FF23A1;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #19E3E3;
+    color: #222222;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(25, 227, 227, 0.3);
+}
+
+.social-icon {
+    background-color: #FF23A1;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    background-color: #19E3E3;
+    color: #222222;
+}
